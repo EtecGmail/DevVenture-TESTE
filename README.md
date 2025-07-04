@@ -42,5 +42,17 @@ npm run build
 ## Git Flow
 Consulte [docs/GITFLOW.md](docs/GITFLOW.md) para saber como utilizar a estratégia de branches adotada neste projeto.
 
+## Commits convencionais
+Este projeto segue o padrão [Conventional Commits](https://www.conventionalcommits.org/).
+Todos os commits devem utilizar o formato `tipo: descrição` e podem conter escopos opcionais.
+
+Exemplo:
+```bash
+feat(login): adicionar fluxo social
+fix(api): corrigir resposta 500
+```
+
+Um hook de `commit-msg` via Commitlint garante automaticamente a validação das mensagens.
+
 ---
 Todos os direitos reservados à equipe Harpion.
