@@ -39,6 +39,8 @@ npm run build
 - Aplique ferramentas de análise estática (lint) e testes de segurança sempre que possível.
 - Utilize HTTPS e valide as entradas do usuário para evitar XSS, CSRF e injeção de código.
 
+## Git Flow
+Consulte [docs/GITFLOW.md](docs/GITFLOW.md) para saber como utilizar a estratégia de branches adotada neste projeto.
 
 ---
 Todos os direitos reservados à equipe Harpion.
