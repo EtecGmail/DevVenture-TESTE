@@ -39,3 +39,12 @@ Route::post('/aluno','App\Http\Controllers\AlunoController@insertAlunoAPI');
 Route::get('/listarAlunos','App\Http\Controllers\AlunoController@listarAlunos');
 
 Route::post('/loginAluno', 'App\Http\Controllers\AuthAlunoController@loginAluno');
+
+route::post('/insertPerguntaAluno', 'App\Http\Controllers\AlunoController@insertPerguntaAluno');
+
+route::get('/listarPerguntasAlunos', 'App\Http\Controllers\AlunoController@listarPerguntasAlunos');
+
+route::post('/insertRespostaProfessor', 'App\Http\Controllers\professorController@insertRespostaProfessor');
+
+
+

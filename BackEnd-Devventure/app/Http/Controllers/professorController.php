@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\AlunoModel;
-use Illuminate\Support\Facades\Hash;
-use App\Models\perguntaAlunoModel;
+use App\Models\respostasProfessorModel;
 
-class AlunoController extends Controller
+class professorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,6 +16,17 @@ class AlunoController extends Controller
     public function index()
     {
         //
+    }
+
+    public function insertRespostaProfessor(Request $request)
+    {
+        $respostaProfessor = new respostasProfessorModel();
+
+        $respostaProfessor->id_pergunta_aluno = $request->id_pergunta_aluno;
+        $respostaProfessor->resposta = $request->resposta;
+
+        $respostaProfessor->save();
+        return response()->json($respostaProfessor, 201);
     }
 
     /**
@@ -39,45 +48,6 @@ class AlunoController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    public function listarAlunos()
-    {
-        $alunos = AlunoModel::all();
-        return response()->json($alunos);
-    }
-
-    public function insertAlunoAPI(Request $request)
-    {
-        $aluno = new AlunoModel();
-
-        $aluno->name = $request->name;
-        $aluno->email = $request->email;    
-        $aluno->password = Hash::make($request->password);
-        $aluno->ra = $request->ra;
-        $aluno->curso = $request->curso;
-        $aluno->semestre = $request->semestre;
-        $aluno->telefone = $request->telefone;
-
-        $aluno->save();
-        return response()->json($aluno, 201);
-    }
-
-    public function insertPerguntaAluno(Request $request)
-    {
-        $perguntaAluno = new perguntaAlunoModel();
-
-        $perguntaAluno->id_aluno = $request->id_aluno;
-        $perguntaAluno->pergunta = $request->pergunta;
-
-        $perguntaAluno->save();
-        return response()->json($perguntaAluno, 201);
-    }
-
-    public function listarPerguntasAlunos()
-    {
-        $perguntasAlunos = perguntaAlunoModel::all();
-        return response()->json($perguntasAlunos);
     }
 
     /**
