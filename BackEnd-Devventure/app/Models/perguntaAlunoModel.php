@@ -16,4 +16,11 @@ class perguntaAlunoModel extends Model
         'id_aluno',
         'pergunta',
     ];
+
+public function resposta()
+{
+    return $this->hasOne(respostasProfessorModel::class, 'id_pergunta_aluno', 'id_pergunta_aluno');
+}
+
+
 }

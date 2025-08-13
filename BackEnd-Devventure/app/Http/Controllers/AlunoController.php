@@ -80,6 +80,13 @@ class AlunoController extends Controller
         return response()->json($perguntasAlunos);
     }
 
+public function listarPerguntasComResposta()
+{
+    $perguntas = perguntaAlunoModel::with('resposta')->get();
+    return response()->json($perguntas);
+}
+
+
     /**
      * Display the specified resource.
      *

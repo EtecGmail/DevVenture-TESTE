@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,5 +47,6 @@ route::get('/listarPerguntasAlunos', 'App\Http\Controllers\AlunoController@lista
 
 route::post('/insertRespostaProfessor', 'App\Http\Controllers\professorController@insertRespostaProfessor');
 
+Route::get('/perguntas-com-respostas', [AlunoController::class, 'listarPerguntasComResposta']);
 
 
