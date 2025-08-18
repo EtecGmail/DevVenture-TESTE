@@ -34,8 +34,15 @@ Route::get('/consultarQuantidade', 'App\Http\Controllers\UsuarioController@consu
 
 Route::get('/consultarUsuariosDescrescente', 'App\Http\Controllers\UsuarioController@consultarUsuariosDescrescente'); */
 
+
+//Aluno
 Route::post('/aluno','App\Http\Controllers\AlunoController@insertAlunoAPI');
 
 Route::get('/listarAlunos','App\Http\Controllers\AlunoController@listarAlunos');
 
 Route::post('/loginAluno', 'App\Http\Controllers\AuthAlunoController@loginAluno');
+
+
+//Administrador
+Route::post('/loginAdmin', 'App\Http\Controllers\AdmController@loginAdmin');
+Route::post('/cadastroAdm', 'App\Http\Controllers\AdmController@cadastroAdm');
