@@ -47,6 +47,11 @@ route::post('/insertPerguntaAluno', 'App\Http\Controllers\AlunoController@insert
 
 route::get('/listarPerguntasAlunos', 'App\Http\Controllers\AlunoController@listarPerguntasAlunos');
 
+
+//Professor
+Route::post('/cadastroProfessor', 'App\Http\Controllers\professorController@cadastroProfessor');
+Route::post('/loginProfessor', 'App\Http\Controllers\professorController@loginProfessor');
+Route::get('/listarProfessores', 'App\Http\Controllers\professorController@listarProfessores');
 route::post('/insertRespostaProfessor', 'App\Http\Controllers\professorController@insertRespostaProfessor');
 
 Route::get('/perguntas-com-respostas', [AlunoController::class, 'listarPerguntasComResposta']);
@@ -56,3 +61,6 @@ Route::get('/perguntas-com-respostas', [AlunoController::class, 'listarPerguntas
 //Administrador
 Route::post('/loginAdmin', 'App\Http\Controllers\AdmController@loginAdmin');
 Route::post('/cadastroAdm', 'App\Http\Controllers\AdmController@cadastroAdm');
+Route::get('/listarAdm', 'App\Http\Controllers\AdmController@listarAdm');
+
+

@@ -65,20 +65,28 @@ class AdmController extends Controller
         'password' => 'required',
         ]);
 
-        
-        $credentials = $request->only('email', 'password');
-
-        
-        if (auth()->attempt($credentials)) {
-            
-            return response()->json(['message' => 'Login successful'], 200);
+        $adm = AdmModel::where('email', $request->email)->first();
+        if (!$adm) {
+            return response()->json(['message' => 'Administrador não encontrado.'], 404);
         }
-
-        
-        return response()->json(['message' => 'Invalid credentials'], 401);
-        
+        if (!Hash::check($request->password, $adm->password)) {
+            return response()->json(['message' => 'Senha incorreta.'], 401);
+        }
+        return response()->json([
+            'message' => 'Login realizado com sucesso.',
+            'adm' => $adm,
+        ]);
        
-    }   
+    }  
+    
+    public function listarAdm()
+    {
+        $adm = AdmModel::all();
+        return response()->json($adm);
+    }
+
+    
+    
 
     /**
      * Display the specified resource.
@@ -111,7 +119,7 @@ class AdmController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
