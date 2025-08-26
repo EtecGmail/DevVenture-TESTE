@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->integer('ra');
-            $table->string('curso');
             $table->string('semestre');
             $table->string('telefone');
             $table->timestamps();

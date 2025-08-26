@@ -55,7 +55,6 @@ class AlunoController extends Controller
         $aluno->email = $request->email;    
         $aluno->password = Hash::make($request->password);
         $aluno->ra = $request->ra;
-        $aluno->curso = $request->curso;
         $aluno->semestre = $request->semestre;
         $aluno->telefone = $request->telefone;
 
