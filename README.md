@@ -2,6 +2,11 @@
 
 Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e segurança. Esta aplicação utiliza tecnologias modernas de front-end e boas práticas de cibersegurança para garantir confiabilidade.
 
+## Estrutura
+
+- `frontend/` – interface React construída com Vite.
+- `backend/` – API desenvolvida em Laravel.
+
 ## Tecnologias principais
 - Vite
 - TypeScript
@@ -11,25 +16,29 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
 
 ## Pré-requisitos
 - Node.js 18 ou superior
-- npm ou bun para gestão de dependências
+- PHP 8.0 ou superior e Composer
+- npm ou bun para gestão de dependências do front-end
 
 ## Instalação
-1. Clone este repositório.
-2. Execute `npm install` ou `bun install` para instalar as dependências.
-3. Copie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente.
 
-## Ambiente de desenvolvimento
-Para iniciar o servidor de desenvolvimento execute:
+### Front-end
+1. `cd frontend`
+2. `npm install` ou `bun install`
+3. `npm run dev` para ambiente de desenvolvimento
+4. `npm run build` para gerar os arquivos de produção
+
+### Back-end
+1. `cd backend`
+2. `composer install`
+3. Copie `.env.example` para `.env` e configure as variáveis
+4. `php artisan serve` para iniciar a API
+
+## Testes e lint
+Execute os linters e testes automatizados:
 
 ```bash
-npm run dev
-```
-
-## Build para produção
-Para gerar os arquivos otimizados em `dist/`:
-
-```bash
-npm run build
+cd frontend && npm run lint && npm test
+cd backend && vendor/bin/pint && php artisan test
 ```
 
 ## Boas práticas de segurança
