@@ -16,7 +16,27 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
 ## Instalação
 1. Clone este repositório.
 2. Execute `npm install` ou `bun install` para instalar as dependências.
-3. Copie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente (como `VITE_API_URL` apontando para a API do Laravel).
+3. Copie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente (como `VITE_API_URL` apontando para a API do Laravel):
+
+   **Linux/macOS**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   **Windows (CMD)**
+
+   ```cmd
+   copy .env.example .env
+   ```
+
+   **Windows (PowerShell)**
+
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+
+   Você também pode copiar o arquivo manualmente usando um gerenciador de arquivos.
 
 ## Ambiente de desenvolvimento
 Para iniciar o servidor de desenvolvimento execute:
