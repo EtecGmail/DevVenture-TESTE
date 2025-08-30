@@ -30,7 +30,27 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
 ### Back-end
 1. `cd backend`
 2. `composer install`
-3. Copie `.env.example` para `.env` e configure as variáveis
+3. Copie `.env.example` para `.env` e configure as variáveis:
+
+   **Linux/macOS**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   **Windows (CMD)**
+
+   ```cmd
+   copy .env.example .env
+   ```
+
+   **Windows (PowerShell)**
+
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+
+   Você também pode copiar o arquivo manualmente usando um gerenciador de arquivos.
 4. `php artisan serve` para iniciar a API
 
 ## Testes e lint
