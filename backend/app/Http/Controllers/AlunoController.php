@@ -48,14 +48,23 @@ class AlunoController extends Controller
 
     public function insertAlunoAPI(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:aluno,email',
+            'password' => 'required|min:8',
+            'ra' => 'required|string',
+            'semestre' => 'required|string',
+            'telefone' => 'nullable|string',
+        ]);
+
         $aluno = new AlunoModel;
 
-        $aluno->name = $request->name;
-        $aluno->email = $request->email;
-        $aluno->password = Hash::make($request->password);
-        $aluno->ra = $request->ra;
-        $aluno->semestre = $request->semestre;
-        $aluno->telefone = $request->telefone;
+        $aluno->name = $validated['name'];
+        $aluno->email = $validated['email'];
+        $aluno->password = Hash::make($validated['password']);
+        $aluno->ra = $validated['ra'];
+        $aluno->semestre = $validated['semestre'];
+        $aluno->telefone = $validated['telefone'] ?? null;
 
         $aluno->save();
 

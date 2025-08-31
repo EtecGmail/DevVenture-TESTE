@@ -21,28 +21,47 @@ class professorController extends Controller
 
     public function cadastroProfessor(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'cpf' => 'required|string|unique:table_professor,cpf',
+            'especializacao' => 'required|string',
+            'formacao' => 'required|string',
+            'registro_profissional' => 'required|string',
+            'telefone' => 'nullable|string',
+            'email' => 'required|email|unique:table_professor,email',
+            'password' => 'required|min:8',
+        ]);
+
         $professor = new ProfModel;
 
-        $professor->name = $request->name;
-        $professor->cpf = $request->cpf;
-        $professor->especializacao = $request->especializacao;
-        $professor->formacao = $request->formacao;
-        $professor->registro_profissional = $request->registro_profissional;
-        $professor->telefone = $request->telefone;
-        $professor->email = $request->email;
-        $professor->password = Hash::make($request->password);
+        $professor->name = $validated['name'];
+        $professor->cpf = $validated['cpf'];
+        $professor->especializacao = $validated['especializacao'];
+        $professor->formacao = $validated['formacao'];
+        $professor->registro_profissional = $validated['registro_profissional'];
+        $professor->telefone = $validated['telefone'] ?? null;
+        $professor->email = $validated['email'];
+        $professor->password = Hash::make($validated['password']);
 
         $professor->save();
 
-        return response()->json(['message' => 'Professor cadastrado com sucesso!'], 201);
+        return response()->json($professor, 201);
     }
 
     public function loginProfessor(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
         $professor = ProfModel::where('email', $request->email)->first();
 
         if ($professor && Hash::check($request->password, $professor->password)) {
-            return response()->json(['message' => 'Login realizado com sucesso!'], 200);
+            return response()->json([
+                'message' => 'Login realizado com sucesso!',
+                'professor' => $professor,
+            ], 200);
         }
 
         return response()->json(['message' => 'Credenciais inválidas!'], 401);
