@@ -13,6 +13,8 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
 - React
 - shadcn-ui
 - Tailwind CSS
+- Laravel
+- PHP
 
 ## Pré-requisitos
 - Node.js 18 ou superior
