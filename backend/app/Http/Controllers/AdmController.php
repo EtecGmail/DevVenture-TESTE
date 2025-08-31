@@ -40,15 +40,21 @@ class AdmController extends Controller
 
     public function cadastroAdm(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:table_administrador,email',
+            'password' => 'required|min:8',
+        ]);
+
         $adm = new AdmModel;
 
-        $adm->name = $request->name;
-        $adm->email = $request->email;
-        $adm->password = Hash::make($request->password);
+        $adm->name = $validated['name'];
+        $adm->email = $validated['email'];
+        $adm->password = Hash::make($validated['password']);
 
         $adm->save();
 
-        return response()->json(['message' => 'Administrador cadastrado com sucesso!'], 201);
+        return response()->json($adm, 201);
     }
 
     public function loginAdmin(Request $request)
