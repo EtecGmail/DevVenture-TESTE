@@ -91,9 +91,13 @@ const Footer = () => {
             <div className="space-y-2">
               <h4 className="text-white font-medium text-sm">Tecnologias:</h4>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">React</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">Vite</span>
                 <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">TypeScript</span>
-                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">Tailwind</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">React</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">shadcn-ui</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">Laravel</span>
+                <span className="bg-slate-800 text-slate-300 px-2 py-1 rounded text-xs">PHP</span>
               </div>
             </div>
           </div>
