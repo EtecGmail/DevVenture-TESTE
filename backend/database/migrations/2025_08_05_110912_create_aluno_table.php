@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string('password');
             $table->integer('ra');
             $table->string('semestre');
-            $table->string('telefone');
+            // Allow telefone to be nullable to prevent database errors when the
+            // field is not provided during aluno creation.
+            $table->string('telefone')->nullable();
             $table->timestamps();
         });
     }
