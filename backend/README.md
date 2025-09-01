@@ -21,6 +21,24 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Configuração de Ambiente Local
+
+Após clonar o repositório, siga estes passos essenciais para configurar seu ambiente:
+
+1.  **Crie seu arquivo de ambiente:** Copie o arquivo de exemplo `.env.example` para um novo arquivo chamado `.env`.
+    ```bash
+    cp .env.example .env
+    ```
+2.  **Gere a Chave de Aplicação:** Esta chave é crucial para a segurança. Execute o comando Artisan:
+    ```bash
+    php artisan key:generate
+    ```
+3.  **Limpe o Cache de Configuração:** Para garantir que a nova chave seja carregada corretamente, limpe o cache.
+    ```bash
+    php artisan config:clear
+    php artisan config:cache
+    ```
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
