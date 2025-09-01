@@ -7,7 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
+/\.env
+/vendor/
+/node_modules/
+storage/logs/*.log
+storage/framework/sessions/*
+public/build
+public/hot
 dist
 dist-ssr
 *.local
