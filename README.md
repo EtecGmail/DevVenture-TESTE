@@ -26,8 +26,29 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
 ### Front-end
 1. `cd frontend`
 2. `npm install` ou `bun install`
-3. `npm run dev` para ambiente de desenvolvimento
-4. `npm run build` para gerar os arquivos de produção
+3. Copie `.env.example` para `.env` e configure as variáveis:
+
+   **Linux/macOS**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   **Windows (CMD)**
+
+   ```cmd
+   copy .env.example .env
+   ```
+
+   **Windows (PowerShell)**
+
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+
+   Você também pode copiar o arquivo manualmente usando um gerenciador de arquivos.
+4. `npm run dev` para ambiente de desenvolvimento
+5. `npm run build` para gerar os arquivos de produção
 
 ### Back-end
 1. `cd backend`
@@ -53,7 +74,8 @@ Projeto exclusivo da equipe Harpion desenvolvido com foco em qualidade e seguran
    ```
 
    Você também pode copiar o arquivo manualmente usando um gerenciador de arquivos.
-4. `php artisan serve` para iniciar a API
+4. `php artisan migrate`
+5. `php artisan serve` para iniciar a API
 
 ## Testes e lint
 Execute os linters e testes automatizados:
